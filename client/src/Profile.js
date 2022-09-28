@@ -4,7 +4,10 @@
 
 const Profile = ({})=>{
     return (
+        <wrapper>
         <h1>profile</h1>
+        </wrapper>
+
     )
 }
 

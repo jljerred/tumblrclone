@@ -1,6 +1,6 @@
 
 import Header from "./Header";
-import makePost from "./makePost";
+import MakePost from "./MakePost";
 import styled from "styled-components";
 //contains header and
 //makePost component with media options and active users pfp + a feed of posts from users the active user follows
@@ -13,15 +13,19 @@ const Dashboard = ({})=>{
     return (
         <Wrapper>
         <Header/>
-        <makePost/>
+        <MakePost/>
         <h1>dashboard content</h1>
         </Wrapper>
     )
 }
 
 const Wrapper = styled.div`
-  display: flex;
-  padding: 20px;
+  background-color: #001936;
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 100vh;
+  width: 100vw;
+text-align: center;
 `;
 
 export default Dashboard;
