@@ -2,23 +2,27 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import styled from "styled-components";
 import Dashboard from "./Dashboard";
 import Profile from "./Profile";
+import NavBar from "./NavBar";
+import Homepage from "./Homepage";
+import Register from "./Register";
+import MakePost from "./MakePost";
 
-
-
-const App=()=> {
+const App = () => {
   return (
-   <Wrapper>
-    <Router>
-      <Routes>
-        <Route path="/" element={<Dashboard/>}/>
-        <Route path="/profile/:profileId" element={<Profile/>}/>
-      </Routes>
+    <Wrapper>
+      <Router>
+        <NavBar />
+        <Routes>
+          <Route path="/" element={<Homepage />} />
+          <Route path="/register" element={<Register />} />
+          <Route path="/dashboard" element={<Dashboard />} />
+          <Route path="/profile/:handle" element={<Profile />} />
+          <Route path="/makepost" element={<MakePost />} />
+        </Routes>
       </Router>
-   </Wrapper>
+    </Wrapper>
   );
-}
+};
 
-const Wrapper = styled.div`
-  display: flex;
-`;
+const Wrapper = styled.div``;
 export default App;

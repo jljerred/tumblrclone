@@ -1,31 +1,54 @@
+//DISPLAYS FEED OF POSTS FROM ALL USERS
 
-import Header from "./Header";
-import MakePost from "./MakePost";
+import { useEffect, useState } from "react";
+import PostDetails from "./PostDetails";
 import styled from "styled-components";
-//contains header and
-//makePost component with media options and active users pfp + a feed of posts from users the active user follows
+import { BeatLoader } from "react-spinners";
+import tumblrbig from "./tumblrbig.png";
 
-//each post contains the users pfp, who it was reblogged from, the username of the op, media, text, notes, and the options to share, comment, reblog, and like the post
+const Dashboard = ({}) => {
+  const [allPosts, setAllPosts] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [refresh, setRefresh] = useState(false);
 
-//if you are not logged in, will display posts from random users
+  useEffect(() => {
+    fetch("/api/homefeed")
+      .then((res) => res.json())
+      .then((allPosts) => {
+        console.log(allPosts);
+        setAllPosts(allPosts.posts);
+      })
+      .then(setIsLoading(false));
+  }, [refresh]);
 
-const Dashboard = ({})=>{
-    return (
-        <Wrapper>
-        <Header/>
-        <MakePost/>
-        <h1>dashboard content</h1>
-        </Wrapper>
-    )
-}
+  return (
+    <Wrapper>
+      <Img src={tumblrbig} />
+
+      {isLoading && (
+        <div>
+          <BeatLoader color="white" />
+        </div>
+      )}
+      {!isLoading &&
+        allPosts.map((post) => {
+          return <PostDetails key={post.id} post={post} />;
+        })}
+    </Wrapper>
+  );
+};
 
 const Wrapper = styled.div`
-  background-color: #001936;
+  background-color: #1d3765;
   color: white;
   font-family: Arial, Helvetica, sans-serif;
-  height: 100vh;
+  min-height: 100vh;
   width: 100vw;
-text-align: center;
+  text-align: center;
+`;
+const Img = styled.img`
+  height: 200px;
+  margin: 10px;
 `;
 
 export default Dashboard;
