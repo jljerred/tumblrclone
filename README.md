@@ -55,12 +55,12 @@ Server now listening on port 8000
 
 ## 📷 Demo Screenshots <a name = "demo"></a>
 <div name="Screenshots" align="center">
- <img width=100% src="ss/1.PNG" alt="screenshot1"></a>
-   <img width=100% src="ss/2.PNG" alt="screenshot2"></a>
-   <img width=100% src="ss/3.PNG" alt="screenshot3"></a>
-   <img width=100% src="ss/4.PNG" alt="screenshot4"></a>
-   <img width=100% src="ss/5.PNG" alt="screenshot5"></a>
-   <img width=100% src="ss/6.PNG" alt="screenshot6"></a>
-   <img width=100% src="ss/7.PNG" alt="screenshot7"></a>
+ <img width=100% src="ss/1.png" alt="screenshot1"></a>
+   <img width=100% src="ss/2.png" alt="screenshot2"></a>
+   <img width=100% src="ss/3.png" alt="screenshot3"></a>
+   <img width=100% src="ss/4.png" alt="screenshot4"></a>
+   <img width=100% src="ss/5.png" alt="screenshot5"></a>
+   <img width=100% src="ss/6.png" alt="screenshot6"></a>
+   <img width=100% src="ss/7.png" alt="screenshot7"></a>
    </div>
 
