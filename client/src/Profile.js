@@ -44,12 +44,12 @@ const Profile = ({}) => {
         )}
         {posts &&
           posts.map((post) => (
-            <>
+            <Wrapper1>
               <Div>{post.post}</Div>
               <Div>{post.media.length && <Img src={post.media[0].src} />}</Div>
-            </>
+            </Wrapper1>
           ))}
-      </Wrapper>
+      </Wrapper> 
     )
   );
 };
@@ -60,6 +60,16 @@ const Wrapper = styled.section`
   min-height: 100vh;
   width: 100vw;
   text-align: center;
+`;
+
+const Wrapper1 = styled.div`
+  color: white;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  border: solid 2px white;
+margin-left:25%;
+  width: 50%;
+
 `;
 
 const Div0 = styled.section`

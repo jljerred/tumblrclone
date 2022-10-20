@@ -2,7 +2,7 @@
 //DISPLAYS PERSONALIZED GREETING TO REGISTERED USERS
 //DISPLAYS REGISTRATION PROMPT IF USER LOGS WITH AUTH0 BUT HAS NOT SET UP THEIR ACCOUNT
 import { useAuth0 } from "@auth0/auth0-react";
-import { useContext, useEffect } from "react";
+import { useContext } from "react";
 import styled from "styled-components";
 import LoginButton from "./LoginButton";
 import LogoutButton from "./LogoutButton";
@@ -13,8 +13,9 @@ import tumblrbig from "./tumblrbig.png";
 const Homepage = ({}) => {
   const { currentUser, setCurrentUser } = useContext(CurrentUserContext);
   const { user } = useAuth0();
-  console.log(user);
   let navigate = useNavigate();
+  console.log(user);
+
 
   console.log(currentUser);
   return (
@@ -22,7 +23,7 @@ const Homepage = ({}) => {
       {user ? <LogoutButton /> : <LoginButton />}
       {currentUser.handle ? (
         <Div>
-          Welcome back {currentUser.handle} !
+          Welcome back @{currentUser.handle} !
           <Img src={tumblrbig} />
         </Div>
       ) : (
@@ -33,8 +34,7 @@ const Homepage = ({}) => {
           }}
         >
           {" "}
-          Please register your account here
-          <Img src={tumblrbig} />
+          Please register your account here<Img src={tumblrbig} />
         </Div>
       )}
     </Wrapper>

@@ -6,10 +6,13 @@ import styled from "styled-components";
 import { BeatLoader } from "react-spinners";
 import tumblrbig from "./tumblrbig.png";
 
+
+
 const Dashboard = ({}) => {
   const [allPosts, setAllPosts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [refresh, setRefresh] = useState(false);
+
 
   useEffect(() => {
     fetch("/api/homefeed")
@@ -23,8 +26,8 @@ const Dashboard = ({}) => {
 
   return (
     <Wrapper>
+      <Wrapper1>
       <Img src={tumblrbig} />
-
       {isLoading && (
         <div>
           <BeatLoader color="white" />
@@ -34,6 +37,7 @@ const Dashboard = ({}) => {
         allPosts.map((post) => {
           return <PostDetails key={post.id} post={post} />;
         })}
+        </Wrapper1>
     </Wrapper>
   );
 };
@@ -46,6 +50,12 @@ const Wrapper = styled.div`
   width: 100vw;
   text-align: center;
 `;
+
+const Wrapper1 = styled.div`
+padding: 20px;
+`
+
+
 const Img = styled.img`
   height: 200px;
   margin: 10px;

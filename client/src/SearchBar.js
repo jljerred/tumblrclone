@@ -6,10 +6,13 @@ import Autocomplete from "@mui/material/Autocomplete";
 import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { FiSearch } from "react-icons/fi";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const SearchBar = ({}) => {
   const [searchOptions, setSearchOptions] = useState([]);
   const [searchText, setSearchText] = useState("");
+  const { user } = useAuth0();
+
   let navigate = useNavigate();
   const SearchUser = () => {
     fetch("/api/users")

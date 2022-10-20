@@ -85,5 +85,6 @@ const Button = styled.button`
 const Img = styled.img`
   max-height: 400px;
   max-width: 400px;
+  margin: 20px;
 `;
 export default MakePost;
